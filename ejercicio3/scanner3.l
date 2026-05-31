@@ -16,10 +16,10 @@ identificador   {letra}({letra}|{digito})*
 %%
 
 {identificador}  {
-    /* TODO 1 — Incrementar contadorTokens en 1 */
-   
-    /* TODO 2 — Imprimir el identificador reconocido
-       Formato esperado: printf("identificador: %s\n", yytext);  */
+    /* DONE 1 — Incrementar contadorTokens en 1 */
+   contadorTokens++;
+    /* DONE 2 — Imprimir el identificador reconocido */
+   printf("identificador: %s\n", yytext);
 }
 
 [ \t\n]         { }
@@ -29,13 +29,13 @@ identificador   {letra}({letra}|{digito})*
 %%
 
 int main(void) {
-    yylex();
+   yylex();
 
-    /* TODO 3 — Imprimir el total de tokens al finalizar
-       Formato esperado: printf("Tokens totales: %d\n", contadorTokens);          */
+   /* TODO 3 — Imprimir el total de tokens al finalizar */
+   printf("Tokens totales: %d\n", contadorTokens);
 
-    /* TODO 4 — Imprimir el doble del total usando la función duplicar()
-       Formato esperado: printf("El doble es: %d\n", duplicar(contadorTokens));   */
+   /* TODO 4 — Imprimir el doble del total usando la función duplicar()*/
+   printf("El doble es: %d\n", duplicar(contadorTokens));   
 
-    return 0;
+   return 0;
 }
